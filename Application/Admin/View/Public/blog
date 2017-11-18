@@ -1,0 +1,33 @@
+create table blog_article(
+	id mediumint unsigned primary key auto_increment,
+	title varchar(60) not null comment '标题',
+	description varchar(255) not null comment '文章标题',
+	content text not null comment '内容',
+	cateId mediumint not null comment '分类id',
+	publish_time int not null default 0 comment '发布时间',
+	pic varchar(100) comment '图片',
+	listorder mediumint default 10,
+	status tinyint default 1
+)engine=myisam charset=utf8;
+
+create table cate(
+	id mediumint unsigned primary key auto_increment,
+	name varchar(60) not null,
+	listorder mediumint default 10,
+
+)engine=myisam charset=utf8;
+
+create table admin(
+	id mediumint unsigned primary key auto_increment,
+	username varchar(60) not null,
+	password varchar(60) not null
+)engine=myisam charset=utf8;
+
+create table link (
+	id mediumint unsigned primary key auto_increment,
+	title varchar(60) not null,
+	url varchar(100) not null,
+	description varchar(255),
+	listorder mediumint default 10,
+) engine=myisam charset=utf8;
+
